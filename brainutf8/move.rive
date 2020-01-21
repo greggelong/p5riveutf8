@@ -1,0 +1,11 @@
+! version = 2.0
+
+! sub moving = move
+! sub going = go
+
++ [*] (move|go) up [*]
+- moving up
+
+
++ [*] (move|go) down [*]
+- moving down

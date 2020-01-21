@@ -1,0 +1,85 @@
+! version = 2.0
+
+! array colors = red blue purple green black
+
++ [*] hello [*] // keyword trigger
+- Hello, human!
+
++ how are you
+- I'm great, how are you?
+- I'm good, you?
+- Good :) you?
+- Great! You?
+- I'm fine, thanks for asking!
+
++ tell me a poem   // multi line response
+- Little Miss Muffit sat on her tuffet,\n
+^ In a nonchalant sort of way.\n
+^ With her forcefield around her,\n
+^ The Spider, the bounder,\n
+^ Is not in the picture today.
+
+ + *          // catch all
+ - I am sorry, I don't understand.{weight=30}
+ - Come again?!{weight=10}
+ - Whaaat?!
+
++ 你好
+- 吃饭了吗
+
++ where am i
+- you are <get postion>
+
++ what is up
+- Not much, you?
+- nm, you?
+- Not a lot, you?
+
++ you are a bot
+- How did you know I'm a machine?
+
++ [*] random [*]
+- Make a sound like a{random} cat | bird | dog | horse{/random}
+
++ my name is *
+- <set name=<formal>>Nice to meet you, <get name>
+
++ what is my name
+* <get name> == undefined => You have not told me.
+- you told me your name is <get name>
+
+
++ who am i
+@ what is my name
+
+
++ what is your name
+- my name is <bot name>
+
+
+
++ who is the baby
+- Mj is the baby.
+
+
++ who is *
+* <get name> == <formal> => Isn't that you?
+- I don't know who <star> is. 
+
++ i (like|love) the color *
+- I <star1> the color <star2> too!
+
++ what color is my (@colors) *
+- That's silly, your <star1> <star2> is <star1>
+
++ what color is [*]
+- I am not sure. I can't see clearly.
+
+
+
++ i have a bird
+- What color is the bird
+
++ (@colors)
+% what color is the bird
+- That's a silly color for a bird!
